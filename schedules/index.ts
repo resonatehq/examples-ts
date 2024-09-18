@@ -35,6 +35,6 @@ const sched = await resonate.schedule("flow-schedule", "* * * * *", flow);
 console.log(sched);
 
 // Start the Resonate application
-resonate.start(5000);
+resonate.start();
 console.log("Running");
 // @@@SNIPEND
