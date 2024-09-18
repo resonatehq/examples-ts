@@ -1,5 +1,6 @@
 // @@@SNIPSTART examples-ts-schedule-flow-function-example
 import { Resonate, Context } from "@resonatehq/sdk";
+import { register } from "module";
 
 // flow is the top-level function that awaits on step1 and step 2
 export async function flow(ctx: Context) {
@@ -28,13 +29,12 @@ const resonate = new Resonate({
   url: "http://localhost:8001",
 });
 
-// Start the Resonate application
-resonate.start(5000);
-
 // Schedule the execution of "flow" for every minute
-// highlight-line
+// highlight-next-line
 const sched = await resonate.schedule("flow-schedule", "* * * * *", flow);
 console.log(sched);
 
+// Start the Resonate application
+resonate.start(5000);
 console.log("Running");
 // @@@SNIPEND
