@@ -1,6 +1,5 @@
 // @@@SNIPSTART examples-ts-schedule-flow-function-example
 import { Resonate, Context } from "@resonatehq/sdk";
-import { register } from "module";
 
 // flow is the top-level function that awaits on step1 and step 2
 export async function flow(ctx: Context) {
